@@ -1,0 +1,8 @@
+.Navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: large;
+    margin: 20px;
+}

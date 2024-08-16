@@ -1,0 +1,27 @@
+<div class="mx-auto mt-5" style="width: 300px;">
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+            <label for="Task">Task</label>
+            <input type="text" class="form-control" placeholder="Enter Task to add" ngModel name="TaskVal">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Completed</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let t of todo_data; index as i">
+                <td>{{t.TaskName}}</td>
+                <td ><input type="checkbox" class="checkbox" (click)="isDone(i)" aria-label="done"></td>
+                <td><button type="button" (click)=deleteTask(i) class="btn btn-danger">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
